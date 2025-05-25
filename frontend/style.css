@@ -1,0 +1,21 @@
+#divLogin{
+    background-color: gainsboro;
+    width: 1000px;
+    height: 600px;
+    left:50%;
+    top:25%;
+    position:absolute;
+    transform:translate(-50%,-25%);
+    border-radius:50px;
+    box-shadow: 3px 5px 15px 0.5px;
+}
+
+.text{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.input{
+    width:250px;
+    height:25px;
+}
