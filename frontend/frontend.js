@@ -23,7 +23,7 @@ function mostrarLista(data){
     divs.forEach(div => div.remove());
     data.forEach((tarefa) => {
         var div = document.createElement('div');
-        feito = tarefa.done ? "Completa":"Incompleta"
+        feito = tarefa.done == "true" ? "Completa":"Incompleta";
         div.textContent = `ID:${tarefa.id.toString().padEnd(5)}|Titulo:${tarefa.title.toString().padEnd(20)}|Status:${feito}`;
         div.className = "tarefa";
         lista.appendChild(div);
