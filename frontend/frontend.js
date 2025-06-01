@@ -18,6 +18,9 @@ function mostrarLista(data){
     principal.style.visibility = "hidden";
     
     lista = document.getElementById("containerLista");
+
+    const divs = lista.querySelectorAll('div');
+    divs.forEach(div => div.remove());
     data.forEach((tarefa) => {
         var div = document.createElement('div');
         feito = tarefa.done ? "Completa":"Incompleta"
