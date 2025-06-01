@@ -12,10 +12,10 @@
     <div id="telaCrud">
         <form id="principal" style="height:100%;width:100%;visibility:visible;position:absolute;">
             <div style="left:50%; top:30%;width:fit-content; position:relative; transform:translate(-50%,0);margin-top: 20px;">
-                <input placeholder="ID da tarefa" type="text" id="idTarefa" class="input" style="position:relative; display:inline-block;">
+                <input placeholder="ID da tarefa" type="text" maxlength="5" oninput="this.value = this.value.replace(/[^0-9]/g, '')" id="idTarefa" class="input" style="position:relative; display:inline-block;">
             </div>
             <div style="left:50%; top:30%;width:fit-content; position:relative; transform:translate(-50%,0);margin-top:20px;">
-                <input placeholder="Título da tarefa" type="text" id="name" class="input" style="position:relative; display:inline-block">
+                <input placeholder="Título da tarefa" type="text" maxlength="20" id="name" class="input" style="position:relative; display:inline-block">
             </div>
             <div style="left:50%; top:30%;width:fit-content; position:relative; transform:translate(-50%,0);margin-top: 20px;">
                 <select placeholder="Status da tarefa" type="text" id="status" class="input" style="position:relative; display:inline-block;">
