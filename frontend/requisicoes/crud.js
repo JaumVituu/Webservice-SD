@@ -39,12 +39,10 @@ function encontrar(){
 }
 
 function cadastrar(){
-	id = document.getElementById("idTarefa").value;
 	titulo = document.getElementById("name").value;
-	feito = document.getElementById("status").value;
 	
-	if(id == "" || titulo == "" || feito == ""){
-		alert("Preencha todos os campos para efetuar essa operação.");
+	if(titulo == ""){
+		alert("Preencha o titulo para efetuar essa operação.");
 		return;
 	}
 
@@ -53,9 +51,7 @@ function cadastrar(){
     myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify({
-      	"id": id,
 		"title": titulo,
-		"done": feito
     });
 
     const requestOptions = {
@@ -70,9 +66,6 @@ function cadastrar(){
 			response.text();
 			if(response.status == 201)
 				alert("Cadastro efetuado com sucesso");
-			else if(response.status == 409){
-				alert("ID já cadastrado");
-			}
 			else{
 				alert("Erro ao cadastar");
 			}

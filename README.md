@@ -9,8 +9,6 @@ Instruções para executar o backend:
     
     - baixar o flask_cors: pip install flask_cors;
     
-    - baixar o requests: pip install requests;
-    
     - baixar a venv: python -m venv venv;
     
     - ativar o venv: (dentro da pasta backend) .\venv\Scripts\activate;

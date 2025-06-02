@@ -24,7 +24,7 @@ function mostrarLista(data){
     data.forEach((tarefa) => {
         var div = document.createElement('div');
         feito = tarefa.done == "true" ? "Completa":"Incompleta";
-        div.textContent = `ID:${tarefa.id.toString().padEnd(5)}|Titulo:${tarefa.title.toString().padEnd(20)}|Status:${feito}`;
+        div.textContent = `ID:${tarefa.id.toString()}|Titulo:${tarefa.title.toString().padEnd(20)}|Status:${feito}`;
         div.className = "tarefa";
         lista.appendChild(div);
     });
