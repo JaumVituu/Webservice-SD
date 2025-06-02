@@ -1,0 +1,38 @@
+# Ignore o ambiente virtual
+venv/
+ENV/
+env/
+.venv/
+
+# Arquivos de cache do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de configuração temporários
+*.log
+*.sqlite3
+
+# VSCode
+.vscode/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Pastas/arquivos ocultos
+*.swp
+*.swo
+
+# Outras possíveis pastas de cache
+.cache/
+.idea/
+*.egg-info/
+.eggs/
+
+# Arquivos de pacotes
+*.tar.gz
+*.whl
+dist/
+build/
