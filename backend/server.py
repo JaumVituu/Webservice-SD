@@ -1,6 +1,7 @@
 import uuid
 import json
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 
 def save_tasks(tasks):
     with open('tasks.txt', 'w') as f:
@@ -22,11 +23,19 @@ while True:
     print("Porta não encontrada. Tente novamente.")
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/tasks', methods=['GET'])
 def get_tasks():
     current_tasks = load_tasks()
     return jsonify(list(current_tasks.values()))
+
+@app.route('/tasks/<task_id>', methods=['GET'])
+def get_task(task_id):
+    tasks = load_tasks()
+    if task_id in tasks:
+        return jsonify(tasks[task_id]), 200
+    return jsonify({'error' : 'Tarefa não encontrada'}), 404
 
 @app.route('/tasks', methods=['POST'])
 def create_task():

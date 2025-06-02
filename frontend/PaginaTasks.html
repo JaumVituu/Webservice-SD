@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="requisicoes/crud.js"></script>
+    <script src="frontend.js"></script>
+    <title>Tarefas</title>
+</head>
+<body>
+    <div id="telaCrud">
+        <form id="principal" style="height:100%;width:100%;visibility:visible;position:absolute;">
+            <div style="left:50%; top:30%;width:fit-content; position:relative; transform:translate(-50%,0);margin-top: 20px;">
+                <input placeholder="ID da tarefa" type="text" id="idTarefa" class="input" style="position:relative; display:inline-block;">
+            </div>
+            <div style="left:50%; top:30%;width:fit-content; position:relative; transform:translate(-50%,0);margin-top:20px;">
+                <input placeholder="Título da tarefa" type="text" maxlength="20" id="name" class="input" style="position:relative; display:inline-block">
+            </div>
+            <div style="left:50%; top:30%;width:fit-content; position:relative; transform:translate(-50%,0);margin-top: 20px;">
+                <select placeholder="Status da tarefa" type="text" id="status" class="input" style="position:relative; display:inline-block;">
+                    <option value ="" style="color:grey;" class="placeholder" disabled selected>Status da tarefa</option>
+                    <option value ="true">Completa</option>
+                    <option value ="false">Incompleta</option>
+                </select>
+            </div>
+            <div style="left:50%; top:35%; width:fit-content; transform:translate(-50%,0); position:relative;">
+                <button type="button" class="botao" onclick="encontrar()">Encontrar</button>
+                <button type="button" class="botao" onclick="cadastrar()">Inserir</button>
+                <button type="button" class="botao" onclick="atualizar()">Atualizar</button>
+                <button type="button" class="botao" onclick="excluir()">Excluir</button>
+                <button type="button" class="botao" onclick="listar()">Listar tarefas</button>
+            </div>
+            <div style="width:fit-content;position:relative; left:50%; transform:translate(-50%,0); top:35%">
+                <p>Obs.: Encontrar e excluir utilizam apenas o ID como base.<br>Inserir utiliza apenas o titulo da tarefa, gerando um ID aleatório e uma tarefa com status "incompleta"</p>
+            </div>
+            <div id="carregando" style="height:100px;width:fit-content;position:relative; visibility: hidden; left:50%; transform:translate(-50%,0); top:35%; margin-top:5%">
+                <span class="circulo"></span>
+                <span class="circulo"></span>
+                <span class="circulo"></span>
+            </div>
+        </form>
+        <div id="telaLista" style="height:100%;width:100%;position:absolute; visibility:hidden;">
+            <button type="button" class="botao" onclick="mostrarForm()" style="width:50px; font-weight: bold; margin-top:5%;margin-left:5%; border-radius:15px;">&lt;</button>
+            <h1 class="text" style="margin-left:10%;">Tarefas cadastradas</h1>
+            <div id="containerLista"></div>
+        </div>
+    </div>
+</body>
+</html>
